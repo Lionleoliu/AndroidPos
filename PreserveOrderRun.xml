@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Preserve order test runs">
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+    <test name="test" preserve-order="true">
+        <classes>
+            <class name="POSAutomationtest.RunTestCase">
+                <methods>
+                    <include name="setUp"/><!--1-->
+                    <include name="login"/>
+                    <include name="vipMemberCreditSale"/>
+                    <include name="vipMemberCashSale"/>
+                    <include name="vipMemberDebitCardSale"/>
+                    <include name="vipMemberCreditCardSale"/>
+                    <include name="regularMemberCreditSale"/>
+                    <include name="regularMemberCashSale"/>
+                    <include name="regularMemberDebitCardSale"/>
+                    <include name="regularMemberCreditCardSale"/>
+                    <include name="clearProduct"/>
+                    <include name="couponScan"/>
+                    <include name="pendingAndHangingOrder"/>
+                    <include name="addfreebie"/>
+                    <include name="logisticsCodeAdd"/>
+                    <include name="changePrice"/>
+                    <include name="deleteProduct"/>
+                    <include name="wholeSaleMemberCreditSale"/>
+                    <include name="wholeSaleMemberCashSale"/>
+                    <include name="wholeSaleMemberDebitCardSale"/>
+                    <include name="wholeSaleMemberCreditCardSale"/>
+                    <include name="walkingMemberCreditSale"/>
+                    <include name="walkingMemberCashSale"/>
+                    <include name="walkingMemberDebitCardSale"/>
+                    <include name="walkingMemberCreditCardSale"/>
+                    <include name="bulkGoodsCashSale"/>
+                    <include name="bulkGoodsDebitCardSale"/>
+                    <include name="bulkGoodsCreditCardSale"/>
+                    <include name="reFund"/>
+                    <include name="pressDailyTrade"/>
+                    <include name="pressDailyReport"/>
+                    <include name="pressRegisterCommission"/>
+                    <include name="handOver"/>
+                    <include name="putawayAndUnshelve"/>
+                    <include name="inventoryPrint"/>
+                    <include name="purchaseGoods"/>
+                    <include name="addingSpecifications"/>
+                    <include name="costPriceChange"/>
+                    <include name="specificationsChange"/>
+                    <include name="retailPriceChange"/>
+                    <include name="wholeSalePriceChange"/>
+                    <include name="barCodeChange"/>
+                    <include name="memberPriceChange"/>
+                    <include name="searchBarCodeAddProduct"/>
+                    <include name="addingNewProduct"/>
+                    <include name="outSidePurchase"/>
+                    <include name="cancellation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
