@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import sun.awt.windows.ThemeReader;
@@ -28,7 +29,7 @@ public class RunTestCase extends Base {
 
     private AndroidDriver driver;//全局变量
 
-    @BeforeSuite//设置
+    @BeforeClass//设置
     public void setUp() throws IOException, InterruptedException {
 //        Runtime.getRuntime().exec("cmd /c start E:\\Appium\\startappium.bat");
 //        Thread.sleep(3000L);
@@ -57,175 +58,176 @@ public class RunTestCase extends Base {
     }
 
 
-    @Test//登陆
+    @Test(priority = 1)//登陆
     public void login() throws IOException, SQLException {
         StartApp.login(driver);
     }
 
-    @Test//新VIP会员赊账支付
+    @Test(priority = 2)//新VIP会员赊账支付
     public void vipMemberCreditSale() throws InterruptedException {
         StartApp.vipMemberCreditSale(driver);
     }
 
-    @Test
+    @Test(priority = 3)
     public void vipMemberCashSale() throws InterruptedException {
         StartApp.vipMemberCashSale(driver);
     }
 
-    @Test
+    @Test(priority = 4)
     public void vipMemberDebitCardSale() throws InterruptedException {
         StartApp.vipMemberDebitCardSale(driver);
     }
 
-    @Test
+    @Test(priority = 4)
     public void vipMemberCreditCardSale() throws InterruptedException {
         StartApp.vipMemberCreditCardSale(driver);
     }
 
 
-    @Test//普通会员赊账支付
+    @Test(priority = 5)//普通会员赊账支付
     public void regularMemberCreditSale() throws InterruptedException {
         StartApp.switchToOldCashier(driver);
         StartApp.regularMemberCreditSale(driver);
     }
 
-    @Test//普通会员现金支付
+    @Test(priority = 6)//普通会员现金支付
     public void regularMemberCashSale() throws InterruptedException {
         StartApp.regularMemberCashSale(driver);
     }
 
-    @Test//普通会员储蓄卡支付
+    @Test(priority = 7)//普通会员储蓄卡支付
     public void regularMemberDebitCardSale() throws InterruptedException {
         StartApp.regularMemberDebitCardSale(driver);
     }
 
-    @Test//普通会员信用卡支付
+    @Test(priority = 8)//普通会员信用卡支付
     public void regularMemberCreditCardSale() throws InterruptedException {
         StartApp.regularMemberCreditCardSale(driver);
     }
 
-    @Test//清除商品
+    @Test(priority = 9)//清除商品
     public void clearProduct() throws InterruptedException {
         StartApp.clearProduct(driver);
     }
 
-    @Test//优惠券扫描
+    @Test(priority = 10)//优惠券扫描
     public void couponScan() throws InterruptedException {
         StartApp.couponScan(driver);
     }
 
-    @Test//挂单
+    @Test(priority = 11)//挂单
     public void  pendingAndHangingOrder(){
         StartApp.pendingAndHangingOrder(driver);
     }
 
-    @Test//添加优惠券
+    @Test(priority = 12)//添加优惠券
     public void addfreebie(){
         StartApp.addfreebie(driver);
     }
 
-    @Test//输入物流码
+    @Test(priority = 13)//输入物流码
     public void logisticsCodeAdd(){
         StartApp.logisticsCodeAdd(driver);
     }
 
-    @Test//改价
+    @Test(priority = 14)//改价
     public void changePrice(){
         StartApp.changePrice(driver);
     }
 
-    @Test //删除商品
+    @Test(priority = 15) //删除商品
     public void deleteProduct(){
         StartApp.deleteProduct(driver);
     }
 
 
-    @Test//批发会员赊账支付
+    @Test(priority = 16)//批发会员赊账支付
     public void wholeSaleMemberCreditSale() throws InterruptedException {
         StartApp.wholeSaleMemberCreditSale(driver);
     }
 
-    @Test//批发会员现金支付
+    @Test(priority = 17)//批发会员现金支付
     public void wholeSaleMemberCashSale() throws InterruptedException {
         StartApp.wholeSaleMemberCashSale(driver);
     }
 
-    @Test//批发会员现金支付
+    @Test(priority = 18)//批发会员现金支付
     public void wholeSaleMemberDebitCardSale() throws InterruptedException {
         StartApp.wholeSaleMemberDebitCardSale(driver);
     }
 
-    @Test//批发会员现金支付
+    @Test(priority = 19)//批发会员现金支付
     public void wholeSaleMemberCreditCardSale() throws InterruptedException {
         StartApp.wholeSaleMemberCreditCardSale(driver);
     }
 
-    @Test//散客赊账支付，支付应该不成功
+    @Test(priority = 20)//散客赊账支付，支付应该不成功
     public void walkingMemberCreditSale() throws InterruptedException {
         StartApp.walkingMemberCreditSale(driver);
     }
 
-    @Test//散客现金支付
+    @Test(priority = 21)//散客现金支付
     public void walkingMemberCashSale() throws InterruptedException {
         StartApp.walkingMemberCashSale(driver);
     }
 
-    @Test//散客会员储蓄卡支付
+    @Test(priority = 22)//散客会员储蓄卡支付
     public void walkingMemberDebitCardSale() throws InterruptedException {
         StartApp.walkingMemberDebitCardSale(driver);
     }
 
-    @Test//散客会员信用卡支付
+    @Test(priority = 23)//散客会员信用卡支付
     public void walkingMemberCreditCardSale() throws InterruptedException {
         StartApp.walkingMemberCreditCardSale(driver);
     }
 
-    @Test//散客散货现金支付
+    @Test(priority = 24)//散客散货现金支付
     public void bulkGoodsCashSale(){
         StartApp.bulkGoodsCashSale(driver);
     }
 
-    @Test//散客散货储蓄卡支付
+    @Test(priority = 25)//散客散货储蓄卡支付
     public void bulkGoodsDebitCardSale(){
         StartApp.bulkGoodsDebitCardSale(driver);
     }
 
-    @Test//散客散货信用卡支付
+    @Test(priority = 26)//散客散货信用卡支付
     public void bulkGoodsCreditCardSale() throws InterruptedException {
         Thread.sleep(4000);
         StartApp.bulkGoodsCreditCardSale(driver);
     }
 
-    @Test//退款
+    @Test(priority = 27)//退款
     public void reFund(){
         StartApp.reFund(driver);
     }
 
-    @Test//点击当日流水
+    @Test(priority = 28)//点击当日流水
     public void pressDailyTrade() throws InterruptedException {
         StartApp.pressDailyTrade(driver);
     }
 
-    @Test//点击日报
+    @Test(priority = 29)//点击日报
     public void pressDailyReport() throws InterruptedException {
         StartApp.pressDailyReport(driver);
     }
 
-    @Test//点击收银提成
+    @Test(priority = 30)//点击收银提成
     public void pressRegisterCommission() throws InterruptedException {
         StartApp.pressRegisterCommission(driver);
     }
 
-    @Test//点击交接班
+    @Test(priority = 31)//点击交接班
     public void handOver() throws InterruptedException {
         StartApp.handOver(driver);
     }
 
     //上下架
-    @Test
-    public void putawayAndUnshelve() throws SQLException {
+    @Test(priority = 32)
+    public void putawayAndUnshelve() throws SQLException, InterruptedException {
         StartApp.loginOnlyForPassword(driver);
         ProductPage productPage = new ProductPage(driver);
+        Thread.sleep(1500);
         productPage.getProduct().click();
         productPage.getAllOfSpinner().click();
         productPage.getSoldOutOfSpinner().click();
@@ -244,7 +246,7 @@ public class RunTestCase extends Base {
     }
 
 //    //盘存打印
-    @Test
+    @Test(priority = 33)
     public void inventoryPrint() {
         ProductPage productPage = new ProductPage(driver);
         productPage.getSearchBar().sendKeys(Environment.ProductOfGoods);
@@ -258,7 +260,7 @@ public class RunTestCase extends Base {
     }
 
     //进货
-    @Test
+    @Test(priority = 34)
     public void purchaseGoods() throws InterruptedException {
         ProductPage productPage = new ProductPage(driver);
         productPage.getExpansion().click();//点击展开按钮
@@ -278,7 +280,7 @@ public class RunTestCase extends Base {
     }
 
     //添加规格
-    @Test
+    @Test(priority = 35)
     public void addingSpecifications() {
         ProductPage productPage = new ProductPage(driver);
         productPage.getAddNewsSpecifications().click();
@@ -291,7 +293,7 @@ public class RunTestCase extends Base {
     }
 
     //修改成本价
-    @Test
+    @Test(priority = 36)
     public void costPriceChange() {
         ProductPage productPage = new ProductPage(driver);
         productPage.getCostPriceChangeButton().click();
@@ -300,7 +302,7 @@ public class RunTestCase extends Base {
     }
 
     //修改规格
-    @Test
+    @Test(priority = 37)
     public void specificationsChange() {
         ProductPage productPage = new ProductPage(driver);
         productPage.getSpecificationsChangeButton().click();
@@ -309,7 +311,7 @@ public class RunTestCase extends Base {
     }
 
     //修改零售价
-    @Test
+    @Test(priority = 38)
     public void retailPriceChange() {
         ProductPage productPage = new ProductPage(driver);
         productPage.getRetailPriceChangeButton().click();
@@ -318,7 +320,7 @@ public class RunTestCase extends Base {
     }
 
     //修改批发价
-    @Test
+    @Test(priority = 39)
     public void wholeSalePriceChange() {
         ProductPage productPage = new ProductPage(driver);
         WebElement category = (new WebDriverWait(driver, 20))
@@ -330,7 +332,7 @@ public class RunTestCase extends Base {
     }
 
     //修改条码
-    @Test
+    @Test(priority = 40)
     public void barCodeChange() throws InterruptedException {
         ProductPage productPage = new ProductPage(driver);
         productPage.getBarCodeChangeButton().click();
@@ -346,7 +348,7 @@ public class RunTestCase extends Base {
     }
 
     //修改会员价
-    @Test
+    @Test(priority = 41)
     public void memberPriceChange() throws InterruptedException, SQLException {
         ProductPage productPage = new ProductPage(driver);
         productPage.getSetUpMemberPrice().click();
@@ -367,14 +369,17 @@ public class RunTestCase extends Base {
 
     //需求：扫码新增商品的判断
     //思路：首先连接到开发环境的数据库环境，拿到开发环境的数据
-    @Test
+    @Test(priority = 42)
     public void searchBarCodeAddProduct() throws SQLException, ClassNotFoundException {
         ProductPage productPage = new ProductPage(driver);
+        productPage.getProduct().click();
         ResultSet resultSet = connectJDBC();
         productPage.getAddProduct().click();
         while (resultSet.next()) {
             productPage.getSearchCodeBarToAddProduct().sendKeys(resultSet.getString("barcode"));
+            break;
         }
+        productPage.getSearch().click();
         productPage.getLongTerm().click();
         productPage.getSubmit().click();
         productPage.getConfirm().click();
@@ -382,7 +387,7 @@ public class RunTestCase extends Base {
     }
 
     //添加商品
-    @Test
+    @Test(priority = 43)
     public void addingNewProduct() throws InterruptedException, SQLException {
         ProductPage productPage = new ProductPage(driver);
         productPage.getAddProduct().click();
@@ -435,6 +440,7 @@ public class RunTestCase extends Base {
         productPage.getConfirm().click();
     }
 
+    @Test(priority = 44)
     public void addSecondProductInfo() {
         ProductPage productPage = new ProductPage(driver);
         List<AndroidElement> chooseButton = driver.findElementsById(Environment.PackageName + ":id/btn_choose_unit");
@@ -455,7 +461,7 @@ public class RunTestCase extends Base {
 
     //需求：先获取进货前的库存，然后获取进货后的库存，最后比对进货后的库存是不是等于进货前的库存-1
     //外采
-    @Test
+    @Test(priority = 45)
     public void outSidePurchase() throws InterruptedException {
         ProductPage productPage = new ProductPage(driver);
         productPage.getAllOfSpinner().click();
@@ -478,7 +484,7 @@ public class RunTestCase extends Base {
     }
 
     //作废
-    @Test
+    @Test(priority = 46)
     public void cancellation() {
         ProductPage productPage = new ProductPage(driver);
         productPage.getOnShelvesOfSpinner().click();
@@ -491,7 +497,4 @@ public class RunTestCase extends Base {
         productPage.getConfirm().click();
         productPage.getCloseButton().click();
     }
-
-
-
 }

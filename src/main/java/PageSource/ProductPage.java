@@ -563,6 +563,7 @@ public class ProductPage {
         int y2 = height * 1 / 3; //上滑的结束点，到y2结束也就是屏幕的三分之一处
         TouchAction tAction = new TouchAction(driver);
         tAction.press(width / 2, y1).waitAction(Duration.ofMillis(1000)).moveTo(width / 2, y2).release().perform();
+
     }
 
     //下滑

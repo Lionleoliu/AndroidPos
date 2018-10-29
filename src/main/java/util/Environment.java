@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Random;
 
 public class Environment {
-    public static final String PackageName="com.yijiupi.retail";
+    public static final String PackageName="com.yijiupi.retailpre";
     public static final String DeviceName = "Android Device";
     public static final String ProductOfGoods = "拉菲奥希";
     public static final String PurchaseCount = "1";

@@ -13,16 +13,6 @@ import java.util.List;
 
 public class StartApp extends Base {
 
-//    public static ResultSet accessDataBaseForLogin() throws SQLException {
-//        String host = "localhost";
-//        String port = "3306";
-//
-//        Connection connection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/posandroid", "root", "Liuyongfei1991");
-//        Statement statement = connection.createStatement();
-//        ResultSet result = statement.executeQuery("select * from LoginInfo");
-//        return result;
-//    }
-
     public static void login(AndroidDriver driver) throws SQLException {
         //ResultSet result = accessDataBaseForLogin();
         LoginPage loginPage = new LoginPage(driver);
@@ -352,8 +342,8 @@ public class StartApp extends Base {
         cashierPage.pressWalkingMemberButton(driver);
         cashierPage.scanCodeBar().sendKeys(cashierPage.BULKGOODSWITHCENTS);
         cashierPage.search().click();
-        for (int i = 0; i < 2; i++) {
-            cashierPage.noCodeProductAddButton.click();
+        for (int i = 0; i < 1; i++) {
+            cashierPage.noCodeProductAddButton().click();
         }
 //        WebElement CashButton = (new WebDriverWait(driver, 20))
 //                .until(ExpectedConditions.presenceOfElementLocated(By.id("com.yijiupi.retail:id/xianjinLL")));
@@ -368,7 +358,7 @@ public class StartApp extends Base {
         cashierPage.pressWalkingMemberButton(driver);
         cashierPage.scanCodeBar().sendKeys(cashierPage.BULKGOODSWITHCENTS);
         cashierPage.search().click();
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 1; i++) {
             cashierPage.noCodeProductAddButton.click();
         }
 //        WebElement CashButton = (new WebDriverWait(driver, 20))
@@ -413,9 +403,8 @@ public class StartApp extends Base {
         //cashierPage.noCodeProductAddButton().click();
         cashierPage.secondRefundButton().click();
         cashierPage.enSureRefundButton().click();
-        cashierPage.getInputBoxOfLastSixNumber().sendKeys(text.substring(12));
+        cashierPage.getInputBoxOfLastSixNumber().sendKeys(text.substring(text.length()-6));
         cashierPage.confirmButton().click();
-
     }
 
     public static void pressDailyTrade(AndroidDriver driver) {

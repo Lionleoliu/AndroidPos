@@ -4,10 +4,11 @@
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter" />
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+        <listener class-name="util.ScreenShotTestNg"/>
     </listeners>
     <test name="Regression test">
         <classes>
-            <class name="MethodTest.ApiStressTest" />
+            <class name="MethodTest.VerifiedTest" />
         </classes>
     </test>
 </suite>
