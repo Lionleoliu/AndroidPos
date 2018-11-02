@@ -422,17 +422,6 @@ public class RunTestCase extends Base {
         productPage.getDelete().click();
         productPage.getAddNewsSpecifications().click();
         addSecondProductInfo();
-//        productPage.SwipeDown();
-//        productPage.getIntroduction().sendKeys(Environment.Introduction);
-//        productPage.getAddingPicture().click();
-//        productPage.getFirstImage().click();
-//        productPage.getPictureConfirm().click();
-//        TouchActions action = new TouchActions(driver);
-//        action.scroll(productPage.getSubmit(), 10, 100);
-//        action.perform();
-        //productPage.swipeUp(driver);
-        //driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"提交\"));");
-        //driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("+"new UiSelector().text(\"提交\"));");
         productPage.getSubmit().click();
         productPage.getInputBoxClearButton().click();
         productPage.getRicewineCategory().click();
@@ -440,7 +429,6 @@ public class RunTestCase extends Base {
         productPage.getConfirm().click();
     }
 
-    @Test(priority = 44)
     public void addSecondProductInfo() {
         ProductPage productPage = new ProductPage(driver);
         List<AndroidElement> chooseButton = driver.findElementsById(Environment.PackageName + ":id/btn_choose_unit");

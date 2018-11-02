@@ -43,7 +43,7 @@ public class Base {
         desiredCapabilities.setCapability(AndroidMobileCapabilityType.RESET_KEYBOARD,true);
         desiredCapabilities.setCapability(MobileCapabilityType.FULL_RESET,false);
         desiredCapabilities.setCapability("noReset", false);
-        desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "160");
+        desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "20");
 //        desiredCapabilities.setCapability("automationName", "uiautomator2");
         //AndroidDriver driver = new AndroidDriver(new URL("http://192.168.217.2:4723/wd/hub"),desiredCapabilities);
         driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"),desiredCapabilities);
