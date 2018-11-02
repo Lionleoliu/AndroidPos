@@ -23,7 +23,7 @@ public class Appium_Env {
 
     @Parameters({"device","apppackage","activity","version","appiumServer"})
     @BeforeClass
-    public void deviceSetUp(String device, String apppackage, String activity, String version, String appiumServer) throws MalformedURLException {
+    public AppiumDriver<MobileElement> deviceSetUp(String device, String apppackage, String activity, String version, String appiumServer) throws MalformedURLException {
         System.out.println("***********************");
         System.out.println("Setting up device and desired capabilities");
 
@@ -40,6 +40,7 @@ public class Appium_Env {
         URL url = new URL(appiumServer);
         driver = new AndroidDriver<MobileElement>(url,cap);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        return driver;
 
     }
 

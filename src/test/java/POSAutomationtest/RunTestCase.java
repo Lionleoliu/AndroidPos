@@ -1,10 +1,12 @@
 package POSAutomationtest;
 
+import POSAutomationPageResource.Appium_Env;
 import POSAutomationPageResource.Base;
 import POSAutomationPageResource.CashierPage;
 import POSAutomationPageResource.StartApp;
 import PageSource.ProductPage;
 import PageSource.YJPPurchasePage;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.By;
@@ -25,16 +27,16 @@ import java.sql.*;
 import java.util.Iterator;
 import java.util.List;
 
-public class RunTestCase extends Base {
+public class RunTestCase extends Appium_Env {
 
     private AndroidDriver driver;//全局变量
 
-    @BeforeClass//设置
-    public void setUp() throws IOException, InterruptedException {
-//        Runtime.getRuntime().exec("cmd /c start E:\\Appium\\startappium.bat");
-//        Thread.sleep(3000L);
-        driver = Base.SetUp();
-    }
+//    @BeforeClass//设置
+//    public void setUp() throws IOException, InterruptedException {
+////        Runtime.getRuntime().exec("cmd /c start E:\\Appium\\startappium.bat");
+////        Thread.sleep(3000L);
+//        driver = Base.SetUp();
+//    }
 
     public static ResultSet connectJDBC() throws ClassNotFoundException, SQLException {
 

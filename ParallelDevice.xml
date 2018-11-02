@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="CrossPlatformSuite" parallel="tests">
-<test name="RealDevice Test">
-    <parameter name="device" value="192.168.250.101:5555"></parameter>
-    <parameter name="apppackage" value="com.yijiupi.retail"></parameter>
-    <parameter name="activity" value="com.yjp.entrance.view.StartActivity"></parameter>
-    <parameter name="version" value="6.0"></parameter>
-    <parameter name="appiumServer" value="http://127.0.0.1:4723/wd/hub"></parameter>
-    <classes>
-        <class name="POSAutomationtest.RunTestCase" />
-    </classes>
-</test>
+    <test name="RealDevice Test">
+        <parameter name="device" value="197.168.12.21:5555"/>
+        <parameter name="apppackage" value="com.yijiupi.retail"/>
+        <parameter name="activity" value="com.yjp.entrance.view.StartActivity"/>
+        <parameter name="version" value="6.0"/>
+        <parameter name="appiumServer" value="http://127.0.0.1:4723/wd/hub"/>
+        <classes>
+            <class name="POSAutomationtest.RunTestCase"/>
+        </classes>
+    </test>
     <test name="Emulator Test">
-        <parameter name="device" value="192.168.250.101:5555"></parameter>
-        <parameter name="apppackage" value="com.yijiupi.retail"></parameter>
-        <parameter name="activity" value="com.yjp.entrance.view.StartActivity"></parameter>
-        <parameter name="version" value="6.0"></parameter>
-        <parameter name="appiumServer" value="http://127.0.0.1:4733/wd/hub"></parameter>
+        <parameter name="device" value="192.168.250.101:5555"/>
+        <parameter name="apppackage" value="com.yijiupi.retail"/>
+        <parameter name="activity" value="com.yjp.entrance.view.StartActivity"/>
+        <parameter name="version" value="6.0"/>
+        <parameter name="appiumServer" value="http://127.0.0.1:4733/wd/hub"/>
         <classes>
             <class name="MethodTest.VerifiedTest"/>
         </classes>

@@ -1,5 +1,6 @@
 package MethodTest;
 
+import POSAutomationPageResource.Appium_Env;
 import POSAutomationPageResource.Base;
 import POSAutomationPageResource.CashierPage;
 import POSAutomationPageResource.StartApp;
@@ -13,6 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import util.Environment;
@@ -24,22 +26,22 @@ import java.util.List;
 
 import static POSAutomationtest.RunTestCase.connectJDBC;
 
-public class VerifiedTest {
+public class VerifiedTest extends Appium_Env {
 
     private AndroidDriver driver;//全局变量
 
 
-    @BeforeSuite//设置
-    public void setUp() throws IOException, InterruptedException {
-//        Runtime.getRuntime().exec("cmd /c start E:\\Appium\\startappium.bat");
-//        Thread.sleep(3000L);
-        driver = Base.SetUp();
-    }
+//    @BeforeClass//设置
+//    public void setUp() throws IOException, InterruptedException {
+////        Runtime.getRuntime().exec("cmd /c start E:\\Appium\\startappium.bat");
+////        Thread.sleep(3000L);
+//        driver = Appium_Env.deviceSetUp();
+//    }
 
-    @Test(priority = 1)//登陆
-    public void login() throws IOException, SQLException {
-        StartApp.login(driver);
-    }
+//    @Test(priority = 1)//登陆
+//    public void login() throws IOException, SQLException {
+//        StartApp.login(driver);
+//    }
 
     @Test(priority = 32)
     public void putawayAndUnshelve() throws SQLException, InterruptedException {
